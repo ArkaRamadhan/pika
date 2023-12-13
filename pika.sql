@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 12:14 AM
+-- Generation Time: Dec 13, 2023 at 03:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,6 +43,28 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` int(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `quantity` int(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `name`, `price`, `image`, `quantity`) VALUES
+(5, 'Fruit tea', 3500, '1129427345_fruit-tea.png', 2),
+(8, 'burger', 6000, '1768431661_burger.png', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `liked`
 --
 
@@ -53,14 +75,6 @@ CREATE TABLE `liked` (
   `harga` double NOT NULL,
   `soldout` enum('yes','no') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `liked`
---
-
-INSERT INTO `liked` (`id_menu`, `foto`, `nama_makanan`, `harga`, `soldout`) VALUES
-(69, '1129427345_fruit-tea.png', 'Fruit tea', 3500, 'no'),
-(70, '1768431661_burger.png', 'burger', 6000, 'no');
 
 -- --------------------------------------------------------
 
@@ -95,18 +109,14 @@ INSERT INTO `menu` (`id_menu`, `foto`, `nama_makanan`, `harga`, `filter`, `soldo
 CREATE TABLE `transaksi` (
   `id_menu` int(11) NOT NULL,
   `nama_makanan` varchar(255) NOT NULL,
-  `foto` varchar(255) NOT NULL,
   `harga` varchar(255) NOT NULL,
-  `total` int(255) NOT NULL
+  `nama` varchar(255) NOT NULL,
+  `kelas` varchar(50) NOT NULL,
+  `notelp` varchar(15) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `komen` text NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `transaksi`
---
-
-INSERT INTO `transaksi` (`id_menu`, `nama_makanan`, `foto`, `harga`, `total`) VALUES
-(42, 'Fruit tea', '1129427345_fruit-tea.png', '3500', 1),
-(43, 'burger', '1768431661_burger.png', '6000', 1);
 
 -- --------------------------------------------------------
 
@@ -139,6 +149,12 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama`, `kelas`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `liked`
@@ -175,6 +191,12 @@ ALTER TABLE `admin`
   MODIFY `id_admin` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `liked`
 --
 ALTER TABLE `liked`
@@ -190,7 +212,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `user`
