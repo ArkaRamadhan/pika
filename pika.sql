@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 03:38 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Feb 06, 2024 at 08:09 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,8 +59,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `name`, `price`, `image`, `quantity`) VALUES
-(5, 'Fruit tea', 3500, '1129427345_fruit-tea.png', 2),
-(8, 'burger', 6000, '1768431661_burger.png', 1);
+(17, 'Fruit tea', 3500, '1129427345_fruit-tea.png', 1);
 
 -- --------------------------------------------------------
 
@@ -75,6 +74,31 @@ CREATE TABLE `liked` (
   `harga` double NOT NULL,
   `soldout` enum('yes','no') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` enum('admin','user') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`, `level`) VALUES
+(2, 'arka', '123', 'user'),
+(3, 'fasya', '123', 'user'),
+(4, 'admin', '123', 'admin'),
+(5, 'robi', '123', 'user'),
+(6, 'robi', '123', 'user'),
+(7, 'basuki', '123', 'user');
 
 -- --------------------------------------------------------
 
@@ -117,6 +141,17 @@ CREATE TABLE `transaksi` (
   `komen` text NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_menu`, `nama_makanan`, `harga`, `nama`, `kelas`, `notelp`, `tanggal`, `komen`, `message`) VALUES
+(81, 'Fruit tea(3), burger(1)', '16500', 'Arkha', 'XI-PPLG', '990909090', '2023-12-26 19:07:00', 'opopopoplplpl', 'okokok'),
+(82, 'Fruit tea(1), burger(2)', '15500', 'kodri', 'XI-PPLG', '12345567788', '2024-01-09 05:58:00', 'Cina babi', 'jangan pedas'),
+(83, 'burger(2), Basreng(1)', '15000', 'eafgaegr', 'awregawerg', '234234523423423', '2024-01-23 07:53:00', 'grhsdghafgawrg', 'aegawergawrg'),
+(84, 'burger(2), Basreng(1)', '15000', 'arka', 'xi-pplg', '12312342354', '2024-01-25 04:57:00', 'dafafefefeef', 'kjaijhuhfe'),
+(85, 'Fruit tea(1)', '3500', 'asd', 'XI-PPLG', '123490123456', '2024-02-05 12:34:00', 'asu', 'bbbbasuki');
 
 -- --------------------------------------------------------
 
@@ -163,6 +198,12 @@ ALTER TABLE `liked`
   ADD PRIMARY KEY (`id_menu`);
 
 --
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
@@ -194,25 +235,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `liked`
 --
 ALTER TABLE `liked`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `user`
