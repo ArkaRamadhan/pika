@@ -227,7 +227,7 @@ if (isset($_POST['add_to_cart'])) {
                                     echo '<a href="login.php" class="btn" name="add_to_cart">add to cart</a>';
                                 }
 
-                                
+
                                 ?>
                             </form>
                         </div>
@@ -499,125 +499,7 @@ if (isset($_POST['add_to_cart'])) {
 
         <!-- review section starts -->
 
-        <section class="review" id="review">
-
-            <h3 class="sub-heading"> customer's review </h3>
-            <h1 class="heading"> what they say </h1>
-
-            <div class="swiper-container review-slider">
-
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide slide">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="images/user.jpg" alt="">
-                            <div class="user-info">
-                                <h3>john kontol</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea in minima quaerat
-                            officiis,
-                            nulla exercitationem architecto quos laudantium a doloremque nesciunt minus iure aperiam,
-                            accusantium corrupti nam, non fugit.</p>
-                    </div>
-
-                    <div class="swiper-slide slide">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="images/user.jpg" alt="">
-                            <div class="user-info">
-                                <h3>john kontol</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea in minima quaerat
-                            officiis,
-                            nulla exercitationem architecto quos laudantium a doloremque nesciunt minus iure aperiam,
-                            accusantium corrupti nam, non fugit.</p>
-                    </div>
-
-                    <div class="swiper-slide slide">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="images/user.jpg" alt="">
-                            <div class="user-info">
-                                <h3>john kontol</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea in minima quaerat
-                            officiis,
-                            nulla exercitationem architecto quos laudantium a doloremque nesciunt minus iure aperiam,
-                            accusantium corrupti nam, non fugit.</p>
-                    </div>
-
-                    <div class="swiper-slide slide">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="images/user.jpg" alt="">
-                            <div class="user-info">
-                                <h3>john kontol</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea in minima quaerat
-                            officiis,
-                            nulla exercitationem architecto quos laudantium a doloremque nesciunt minus iure aperiam,
-                            accusantium corrupti nam, non fugit.</p>
-                    </div>
-
-                    <div class="swiper-slide slide">
-                        <i class="fas fa-quote-right"></i>
-                        <div class="user">
-                            <img src="images/user.jpg" alt="">
-                            <div class="user-info">
-                                <h3>john kontol</h3>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea in minima quaerat
-                            officiis,
-                            nulla exercitationem architecto quos laudantium a doloremque nesciunt minus iure aperiam,
-                            accusantium corrupti nam, non fugit.</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
+        
 
         <!-- cart section start -->
 

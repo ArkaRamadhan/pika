@@ -19,8 +19,6 @@ include 'koneksi.php';
     }
 
     include 'koneksi.php';
-    // enkripsi password
-    $password = password_hash($password, PASSWORD_DEFAULT);
 
     mysqli_query($koneksi, "insert into login values('', '$username', '$password', '$level')");
     echo "<script>
